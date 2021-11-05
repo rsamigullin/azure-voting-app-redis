@@ -1,0 +1,25 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    # - uses: actions/checkout@master
+    
+    - uses: azure/k8s-bake@v1
+      with:
+        ref: rsamigullin/bake-update
+        renderEngine: 'kompose'
+        dockerComposeFile: './docker-compose.yml'
+        kompose-version: 'latest'
+
+
+    # - uses: azure/k8s-bake@v1
+    #   with:
+    #     renderEngine: 'helm'
+    #     helmChart: './action1-chart/' 
+    #     overrideFiles: './action1-chart/values.yaml'
+    #     overrides: |     
+    #       replicas:2
+    #     helm-version: 'latest' 
+    #   id: bake
