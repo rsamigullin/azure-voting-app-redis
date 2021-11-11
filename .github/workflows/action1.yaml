@@ -8,9 +8,8 @@ jobs:
     
     - uses: azure/k8s-bake@v1
       with:
-        ref: rsamigullin/bake-update
         renderEngine: 'kompose'
-        dockerComposeFile: './docker-compose.yml'
+        dockerComposeFile: '../docker-compose.yml'
         kompose-version: 'latest'
 
 
