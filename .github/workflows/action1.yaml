@@ -6,19 +6,19 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    # - uses: azure/k8s-bake@v1
-    #   with:
-    #     renderEngine: 'kompose'
-    #     dockerComposeFile: '../docker-compose.yml'
-    #     kompose-version: 'latest'
-
-
-    - uses: rsamigullin/k8s-bake@master
+    - uses: rsamigullin/k8s-bake@rsamigullin/bake-update1
       with:
-        renderEngine: 'helm'
-        helmChart: './action1-chart/' 
-        overrideFiles: './action1-chart/values.yaml'
-        overrides: |     
-          replicas:2
-        helm-version: 'latest' 
-      id: bake
+        renderEngine: 'kompose'
+        dockerComposeFile: '../docker-compose.yml'
+        kompose-version: 'latest'
+
+
+    # - uses: rsamigullin/k8s-bake@master
+    #   with:
+    #     renderEngine: 'helm'
+    #     helmChart: './action1-chart/' 
+    #     overrideFiles: './action1-chart/values.yaml'
+    #     overrides: |     
+    #       replicas:2
+    #     helm-version: 'latest' 
+    #   id: bake
