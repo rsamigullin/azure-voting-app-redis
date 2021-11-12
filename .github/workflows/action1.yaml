@@ -13,7 +13,7 @@ jobs:
     #     kompose-version: 'latest'
 
 
-    - uses: rsamigullin/k8s-bake@rsamigullin/bake-update1
+    - uses: rsamigullin/k8s-bake@master
       with:
         renderEngine: 'helm'
         helmChart: './action1-chart/' 
